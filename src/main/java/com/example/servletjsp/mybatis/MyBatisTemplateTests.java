@@ -11,6 +11,11 @@ import java.util.Map;
 public class MyBatisTemplateTests {
 
     public static void main(String[] args) {
+        //step1();
+        //step2();
+       //step3();
+        //step4();
+        //step5();
         step6();
     }
 
@@ -30,9 +35,9 @@ public class MyBatisTemplateTests {
         List<Integer> contentStatusList = Arrays.asList(1, 2);
         LocalDate createDateFrom = LocalDate.of(2022, 1, 1);
 
-        List<Map<String, Object>> findFestivalList = myBatisTemplate.findFestivalList(contentStatusList, areaCodeList, createDateFrom);
+        List<Map<String, Object>> findFestivalListBy = myBatisTemplate.findFestivalListBy(contentStatusList, areaCodeList, createDateFrom);
 
-        System.out.println("findFestivalList --> " + findFestivalList);
+        System.out.println("findFestivalListBy --> " + findFestivalListBy);
     }
 
 
@@ -53,16 +58,16 @@ public class MyBatisTemplateTests {
 
     public static void step5() {
         MyBatisTemplate myBatisTemplate = new MyBatisTemplate();
-        List<Festival> festivalsList = myBatisTemplate.findFestivalRelationList();
-        System.out.println("festivalsList --> " + festivalsList);
+
+        List<Festival> findFestivalRelationList = myBatisTemplate.findFestivalRelationList();
+        System.out.println("findFestivalRelationList --> " + findFestivalRelationList);
     }
 
     public static void step6() {
         MyBatisTemplate myBatisTemplate = new MyBatisTemplate();
 
-        List<Festival> findFestivalRelationList = myBatisTemplate
-                .findFestivalInterfaceList(Arrays.asList(1,2));
-        System.out.println("fetivalList --> " + findFestivalRelationList);
+        List<Festival> findFestivalInterfaceList = myBatisTemplate.findFestivalInterfaceList(Arrays.asList(1,2));
+        System.out.println("findFestivalInterfaceList --> " + findFestivalInterfaceList);
     }
 
 }

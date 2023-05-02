@@ -4,10 +4,11 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.servletjsp.mybatis.mapper.FestivalMapper">
+
     <select id="findFestivalList" resultType="java.util.Map">
         SELECT
         CM.COT_ID, TITLE, CONTENT_STATUS, CONTENT_TYPE, CREATE_DATE, MAPX, MAPY 
-        FROM CONTENT_MASTER CM  
+        FROM CONTENT_MASTER CM
         INNER JOIN DATABASE_MASTER DM 
         ON CM.COT_ID = DM.COT_ID 
         INNER JOIN FESTIVAL_INTRO FI  
@@ -53,6 +54,7 @@
         LIMIT 0,10
     </select>
 
+
     <select id="findFestivalMapDtoList" resultMap="festivalMap">
         SELECT
         CM.COT_ID, TITLE, CONTENT_STATUS, CONTENT_TYPE, CREATE_DATE, MAPX, MAPY
@@ -89,7 +91,6 @@
         INNER JOIN DETAIL_INFO DI
         ON CM.COT_ID = DI.COT_ID
     </select>
-
 
     <resultMap id="festivalWithDetailMap" type="com.example.servletjsp.mybatis.dto.Festival">
         <id column="COT_ID" property="cotId" />
@@ -136,4 +137,5 @@
         LEFT OUTER JOIN DETAIL_INFO DI
         ON CM.COT_ID = DI.COT_ID
     </select>
+
 </mapper>

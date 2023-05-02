@@ -5,8 +5,9 @@
 
 <configuration>
     <typeAliases>
-        <typeAlias type="com.example.servletjsp.mybatis.dto.Festival" alias="festival" />
+        <typeAlias type="com.example.servletjsp.mybatis.dto.Festival" alias="festival"/>
     </typeAliases>
+
     <environments default="default">
         <environment id="default">
             <transactionManager type="JDBC"></transactionManager>
